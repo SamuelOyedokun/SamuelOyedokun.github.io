@@ -1,4 +1,5 @@
-# Samuel Oyedokun — Data Analyst | BI Engineer | Systems Builder
+# Samuel Oyedokun 
+# Data Analyst | BI Engineer | AI Systems Builder
 
 🔗 Live Portfolio: https://SamuelOyedokun.github.io
 
