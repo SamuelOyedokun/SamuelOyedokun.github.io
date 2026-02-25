@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samuel Oyedokun — Data Analyst</title>
+<title>Samuel Oyedokun — Data Analyst & BI Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -22,6 +22,8 @@
   --accent-2:   #0F9D7E;
   --gold:       #B8892A;
   --gold-soft:  #FBF6EC;
+  --bot:        #7C3AED;
+  --bot-soft:   #F5F3FF;
   --radius:     4px;
   --shadow-sm:  0 1px 3px rgba(15,17,23,0.06), 0 1px 2px rgba(15,17,23,0.04);
   --shadow-md:  0 4px 16px rgba(15,17,23,0.08), 0 2px 4px rgba(15,17,23,0.04);
@@ -59,7 +61,7 @@ body {
 .fade-up-3 { animation-delay: 0.3s; }
 .fade-up-4 { animation-delay: 0.4s; }
 
-/* ── Navigation ─────────────────────────────────────────── */
+/* ── Navigation ── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -110,7 +112,7 @@ nav {
 
 .nav-cta:hover { background: var(--accent) !important; }
 
-/* ── Hero ───────────────────────────────────────────────── */
+/* ── Hero ── */
 #hero {
   min-height: 100vh;
   display: grid;
@@ -300,7 +302,7 @@ nav {
   margin-top: 10px;
 }
 
-/* ── Sections ───────────────────────────────────────────── */
+/* ── Sections ── */
 section { padding: 100px max(40px, 5vw); }
 
 .section-eyebrow {
@@ -340,7 +342,7 @@ section { padding: 100px max(40px, 5vw); }
   margin-bottom: 56px;
 }
 
-/* ── About ──────────────────────────────────────────────── */
+/* ── About ── */
 #about {
   background: var(--paper-warm);
   border-top: 1px solid var(--rule);
@@ -440,8 +442,6 @@ section { padding: 100px max(40px, 5vw); }
   font-weight: 300;
 }
 
-.about-right p strong { color: var(--ink); font-weight: 600; }
-
 .about-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -467,7 +467,7 @@ section { padding: 100px max(40px, 5vw); }
 
 .highlight-item span { font-size: 0.78rem; color: var(--ink-muted); }
 
-/* ── Projects ───────────────────────────────────────────── */
+/* ── Projects ── */
 #projects { background: var(--paper); }
 
 .projects-header {
@@ -481,7 +481,7 @@ section { padding: 100px max(40px, 5vw); }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -498,7 +498,7 @@ section { padding: 100px max(40px, 5vw); }
 .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
 
 .project-card.featured {
-  grid-column: span 2;
+  grid-column: span 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -509,7 +509,7 @@ section { padding: 100px max(40px, 5vw); }
   overflow: hidden;
 }
 
-.project-card.featured .project-visual { height: auto; min-height: 300px; }
+.project-card.featured .project-visual { height: auto; min-height: 320px; }
 
 .project-visual img {
   width: 100%;
@@ -531,10 +531,10 @@ section { padding: 100px max(40px, 5vw); }
 }
 
 .pv-kpi    { background: linear-gradient(135deg, #0F1117 0%, #1B4FD8 100%); }
+.pv-bot    { background: linear-gradient(135deg, #1a0040 0%, #7C3AED 100%); }
 .pv-enroll { background: linear-gradient(135deg, #0F3D2E 0%, #0F9D7E 100%); }
 .pv-churn  { background: linear-gradient(135deg, #2D1B00 0%, #B8892A 100%); }
 .pv-drop   { background: linear-gradient(135deg, #1A0F2E 0%, #6B46C1 100%); }
-.pv-data   { background: linear-gradient(135deg, #0F1F2E 0%, #0284C7 100%); }
 
 .project-live-badge {
   position: absolute;
@@ -576,6 +576,8 @@ section { padding: 100px max(40px, 5vw); }
   color: var(--accent);
   margin-bottom: 10px;
 }
+
+.project-category.cat-bot { color: var(--bot); }
 
 .project-title {
   font-family: 'Cormorant Garamond', serif;
@@ -634,10 +636,11 @@ section { padding: 100px max(40px, 5vw); }
 
 .project-link.primary { background: var(--ink); color: var(--paper); }
 .project-link.primary:hover { background: var(--accent); }
+.project-link.primary.bot-primary:hover { background: var(--bot); }
 .project-link.secondary { background: var(--paper-warm); color: var(--ink); border: 1px solid var(--rule); }
 .project-link.secondary:hover { border-color: var(--ink); }
 
-/* ── Skills ─────────────────────────────────────────────── */
+/* ── Skills ── */
 #skills {
   background: var(--ink);
   color: var(--paper);
@@ -721,7 +724,7 @@ section { padding: 100px max(40px, 5vw); }
   animation-delay: 0.5s;
 }
 
-/* ── Education ──────────────────────────────────────────── */
+/* ── Education ── */
 #education {
   background: var(--paper-warm);
   border-top: 1px solid var(--rule);
@@ -808,57 +811,6 @@ section { padding: 100px max(40px, 5vw); }
   margin-top: 8px;
 }
 
-.transcript-toggle {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  background: var(--paper-card);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  margin-top: 16px;
-  transition: border-color 0.2s;
-  user-select: none;
-}
-
-.transcript-toggle:hover { border-color: var(--accent); }
-
-.transcript-toggle span {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  flex: 1;
-}
-
-.transcript-toggle .chevron { font-size: 0.7rem; color: var(--ink-muted); transition: transform 0.3s; }
-.transcript-content { display: none; background: var(--paper-card); border: 1px solid var(--rule); border-top: none; border-radius: 0 0 var(--radius) var(--radius); overflow: hidden; }
-.transcript-content.open { display: block; }
-.transcript-toggle.open .chevron { transform: rotate(180deg); }
-
-.transcript-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-
-.transcript-table th {
-  background: var(--paper-warm);
-  padding: 10px 14px;
-  text-align: left;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  border-bottom: 1px solid var(--rule);
-}
-
-.transcript-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); color: var(--ink-light); }
-.transcript-table tr:last-child td { border-bottom: none; }
-.transcript-table tr:hover td { background: var(--paper-warm); }
-
-.grade-a { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 500; color: var(--accent-2); background: rgba(15,157,126,0.08); padding: 2px 8px; border-radius: 3px; }
-.grade-b { font-family: 'DM Mono', monospace; font-size: 0.72rem; font-weight: 500; color: var(--gold); background: var(--gold-soft); padding: 2px 8px; border-radius: 3px; }
-
 .cert-item {
   background: var(--paper-card);
   border: 1px solid var(--rule);
@@ -885,7 +837,7 @@ section { padding: 100px max(40px, 5vw); }
 .cert-name { font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
 .cert-org { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.06em; color: var(--ink-muted); text-transform: uppercase; }
 
-/* ── Footer ─────────────────────────────────────────────── */
+/* ── Footer ── */
 footer {
   background: var(--ink);
   color: rgba(250,250,248,0.4);
@@ -914,11 +866,17 @@ footer {
 
 .footer-links a:hover { color: rgba(250,250,248,0.8); }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .project-card.featured { grid-column: span 2; }
+}
+
 @media (max-width: 900px) {
   #hero { grid-template-columns: 1fr; }
   .hero-right { border-top: 1px solid var(--rule); }
   .hero-left { border-right: none; padding-bottom: 40px; }
+  .projects-grid { grid-template-columns: 1fr; }
   .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
   .project-card.featured .project-visual { min-height: 220px; }
   .about-grid { grid-template-columns: 1fr; }
@@ -949,14 +907,14 @@ footer {
   <div class="hero-left">
     <div class="hero-badge fade-up">
       <div class="hero-badge-dot"></div>
-      <span>Open to Full-Time, Remote & International Roles</span>
+      <span>Open to Full-Time, Remote &amp; International Roles</span>
     </div>
     <h1 class="hero-name fade-up fade-up-1">
       Samuel<br><em>Oyedokun</em>
     </h1>
-    <p class="hero-title fade-up fade-up-2">Data Analyst · BI Engineer · Systems Builder</p>
+    <p class="hero-title fade-up fade-up-2">Data Analyst · BI Engineer · AI Product Builder</p>
     <p class="hero-desc fade-up fade-up-3">
-      Most data work stops at the chart. Mine doesn't. I design and deploy analytical systems that pull from real databases, compute the numbers that matter, and put them in front of the right people — automatically, every day.
+      Most data work stops at the chart. Mine doesn't. I design and deploy analytical systems and AI-powered products that pull from real databases, compute the numbers that matter, and put them in front of the right people — automatically, every day.
     </p>
     <div class="hero-actions fade-up fade-up-4">
       <a href="#projects" class="btn-primary">View My Work →</a>
@@ -984,8 +942,8 @@ footer {
       </div>
     </div>
     <div class="hero-quote">
-      <p>"The analysis is the starting point. The system is the product."</p>
-      <cite>— Samuel Oyedokun, Data Analyst</cite>
+      <p>"The analysis is the starting point. The system is the product. The impact is the proof."</p>
+      <cite>— Samuel Oyedokun, Data Analyst &amp; AI Product Builder</cite>
     </div>
   </div>
 </section>
@@ -997,7 +955,7 @@ footer {
       <div class="about-avatar">
         <div class="about-avatar-tag">
           <strong>Samuel Oyedokun</strong>
-          <span>Nigeria · Open to Remote & International</span>
+          <span>Nigeria · Open to Remote &amp; International</span>
         </div>
       </div>
       <div class="about-contact-links">
@@ -1020,28 +978,30 @@ footer {
       <div class="section-eyebrow">About Me</div>
       <h2 class="section-title">Turning data into<br>systems that deliver</h2>
 
-      <p>I am a results-driven Data Analyst with over <strong>5 years of experience</strong> in data analysis, business intelligence, and applied analytics. My background combines Physics (BSc, Second Class Upper) and Information Science (MSc), giving me both quantitative rigour and systems thinking.</p>
+      <p>I am a results-driven Data Analyst with over 5 years of experience in data analysis, business intelligence, and applied analytics. My background combines Physics (BSc, Second Class Upper) and Information Science (MSc), giving me both quantitative rigour and systems thinking.</p>
 
-      <p>I don't just analyze data — I build the infrastructure around it. From <strong>automated KPI pipelines</strong> that deliver executive reports to stakeholders' inboxes every morning without anyone lifting a finger, to <strong>enrolment prediction tools</strong> that help universities plan ahead, to <strong>machine learning systems</strong> that flag at-risk students before they drop out — my work is designed to be used, not just presented.</p>
+      <p>I don't just analyze data, I build the infrastructure around it. From automated KPI pipelines that deliver executive reports to stakeholders' inboxes every morning without anyone lifting a finger, to enrolment prediction tools that help universities plan ahead, to machine learning systems that flag at-risk students before they drop out. My work is designed to be used, not just presented.</p>
 
-      <p>I am open to <strong>full-time, remote, and international opportunities</strong> in Data Analysis, Business Intelligence Engineering, and ML-powered analytics. I bring research-oriented thinking, strong communication skills, and a track record of delivering production-grade systems that solve real problems.</p>
+      <p>I also build AI-powered products that solve real problems in the real world. TraderBot, my WhatsApp business assistant, runs 24/7 serving Nigerian market traders — recording sales, tracking stock, managing debts, and generating business summaries entirely through natural conversation, with zero infrastructure cost.</p>
+
+      <p>I am open to full-time, remote, and international opportunities in Data Analysis, Business Intelligence Engineering, and ML-powered analytics. I bring research-oriented thinking, strong communication skills, and a track record of delivering production-grade systems that solve real problems.</p>
 
       <div class="about-highlights">
         <div class="highlight-item">
           <strong>MSc Information Science</strong>
-          <span>University of Ibadan, 2024/2025</span>
+          <span>University of Ibadan, 2026</span>
         </div>
         <div class="highlight-item">
           <strong>BSc Physics — 2nd Class Upper</strong>
           <span>University of Abuja, 2015</span>
         </div>
         <div class="highlight-item">
-          <strong>Python & SQL Expert</strong>
-          <span>ETL · BI · ML Pipelines</span>
+          <strong>Python, SQL &amp; AI/LLM</strong>
+          <span>ETL · BI · ML · NLP Pipelines</span>
         </div>
         <div class="highlight-item">
           <strong>Live Deployed Systems</strong>
-          <span>Streamlit · GitHub Actions</span>
+          <span>Streamlit · WhatsApp · Render</span>
         </div>
       </div>
     </div>
@@ -1054,7 +1014,7 @@ footer {
     <div>
       <div class="section-eyebrow">Portfolio</div>
       <h2 class="section-title">Selected Work</h2>
-      <p style="font-size:0.88rem;color:var(--ink-muted);margin-top:4px;">Showing 5 of 15+ projects</p>
+      <p style="font-size:0.88rem;color:var(--ink-muted);margin-top:4px;">Showing 5 of multiple projects</p>
     </div>
     <a href="https://github.com/SamuelOyedokun" target="_blank" class="btn-secondary">View All on GitHub →</a>
   </div>
@@ -1086,6 +1046,30 @@ footer {
       </div>
     </div>
 
+    <!-- TraderBot -->
+    <div class="project-card">
+      <div class="project-visual pv-bot">
+        <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800&q=80"
+             alt="TraderBot WhatsApp AI"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-visual-fallback" style="display:none;">🤖</div>
+        <div class="project-live-badge">Live</div>
+      </div>
+      <div class="project-body">
+        <div class="project-category cat-bot">AI Product · WhatsApp Bot · NLP</div>
+        <h3 class="project-title">TraderBot — AI WhatsApp Business Assistant</h3>
+        <p class="project-desc">A fully deployed AI-powered WhatsApp chatbot built for Nigerian market traders. Understands natural Pidgin English and handles complete business operations — recording sales, tracking stock in real time, managing customer debts, and generating revenue summaries — all through conversation. Runs 24/7 on a live server with zero infrastructure cost.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Groq AI</span>
+          <span class="tag">LLaMA 3.3</span><span class="tag">Twilio</span><span class="tag">Supabase</span><span class="tag">Render</span>
+        </div>
+        <div class="project-links">
+          <a href="https://trader-bot-wavz.onrender.com" target="_blank" class="project-link primary bot-primary">↗ Live Server</a>
+          <a href="https://github.com/SamuelOyedokun/Trader-Bot" target="_blank" class="project-link secondary">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Enrolment -->
     <div class="project-card">
       <div class="project-visual pv-enroll">
@@ -1093,12 +1077,11 @@ footer {
              alt="University Enrolment"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="project-visual-fallback" style="display:none;">🎓</div>
-        <div class="project-live-badge">Live</div>
       </div>
       <div class="project-body">
         <div class="project-category">Education Analytics · ML · Prediction</div>
         <h3 class="project-title">University Enrolment Analytics Platform</h3>
-        <p class="project-desc">Analyzed 37,000+ enrolment records (2014–2024) for the University of Ibadan. Built ML models for enrolment forecasting and an interactive prediction tool to support staffing decisions, hostel allocation, and budget planning at institutional level.</p>
+        <p class="project-desc">Analyzed 37,000+ enrolment records (2014–2024) for the University of Ibadan. Built ML models achieving 95% accuracy for enrolment forecasting, with an interactive prediction tool to support staffing decisions, hostel allocation, and budget planning.</p>
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">Scikit-learn</span>
           <span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">Prediction</span>
@@ -1120,7 +1103,7 @@ footer {
       </div>
       <div class="project-body">
         <div class="project-category">CRM · Churn Modelling</div>
-        <h3 class="project-title">Customer Retention & Churn Analysis</h3>
+        <h3 class="project-title">Customer Retention &amp; Churn Analysis</h3>
         <p class="project-desc">Analyzed telecom customer churn to quantify revenue at risk and identify key churn drivers. Behavioral and contract-level patterns surfaced to prioritize high-impact retention campaigns where they matter most.</p>
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">Pandas</span>
@@ -1162,8 +1145,8 @@ footer {
 <!-- Skills -->
 <section id="skills">
   <div class="section-eyebrow">Technical Expertise</div>
-  <h2 class="section-title">Skills & Stack</h2>
-  <p class="section-sub">Tools and technologies I use to build production-grade analytical systems.</p>
+  <h2 class="section-title">Skills &amp; Stack</h2>
+  <p class="section-sub">Tools and technologies I use to build production-grade analytical systems and AI-powered products.</p>
 
   <div class="skills-grid">
     <div class="skill-category">
@@ -1180,12 +1163,23 @@ footer {
     <div class="skill-category">
       <div class="skill-cat-header">
         <div class="skill-cat-icon ic-green">📊</div>
-        <div class="skill-cat-name">Analytics & ML</div>
+        <div class="skill-cat-name">Analytics &amp; ML</div>
       </div>
       <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">Pandas & NumPy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Pandas &amp; NumPy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
         <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
         <div class="skill-item"><span class="skill-name">Deep Learning</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon ic-purple">🤖</div>
+        <div class="skill-cat-name">AI &amp; NLP</div>
+      </div>
+      <div class="skill-items">
+        <div class="skill-item"><span class="skill-name">Groq / LLaMA</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Prompt Engineering</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Flask / REST APIs</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div>
       </div>
     </div>
     <div class="skill-category">
@@ -1195,17 +1189,17 @@ footer {
       </div>
       <div class="skill-items">
         <div class="skill-item"><span class="skill-name">SQL Server</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">PostgreSQL</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">PostgreSQL / Supabase</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
         <div class="skill-item"><span class="skill-name">SQLite</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
       </div>
     </div>
     <div class="skill-category">
       <div class="skill-cat-header">
-        <div class="skill-cat-icon ic-purple">📈</div>
-        <div class="skill-cat-name">Visualization & BI</div>
+        <div class="skill-cat-icon ic-blue">📈</div>
+        <div class="skill-cat-name">Visualization &amp; BI</div>
       </div>
       <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">Plotly & Streamlit</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Plotly &amp; Streamlit</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div></div>
         <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div>
         <div class="skill-item"><span class="skill-name">Matplotlib</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
       </div>
@@ -1213,23 +1207,12 @@ footer {
     <div class="skill-category">
       <div class="skill-cat-header">
         <div class="skill-cat-icon ic-rose">⚙️</div>
-        <div class="skill-cat-name">Engineering & DevOps</div>
+        <div class="skill-cat-name">Engineering &amp; DevOps</div>
       </div>
       <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">Git & GitHub</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">GitHub Actions</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
         <div class="skill-item"><span class="skill-name">ETL Pipelines</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-      </div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon ic-blue">📧</div>
-        <div class="skill-cat-name">Automation</div>
-      </div>
-      <div class="skill-items">
-        <div class="skill-item"><span class="skill-name">Report Automation</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Email Delivery</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">PDF Generation</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">GitHub Actions</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Render / Deploy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
       </div>
     </div>
   </div>
@@ -1238,7 +1221,7 @@ footer {
 <!-- Education -->
 <section id="education">
   <div class="section-eyebrow">Academic Background</div>
-  <h2 class="section-title">Education & Certifications</h2>
+  <h2 class="section-title">Education and Certifications</h2>
   <p class="section-sub">A foundation in Physics and Information Science that drives rigorous analytical thinking.</p>
 
   <div class="education-grid">
@@ -1247,46 +1230,16 @@ footer {
 
       <div class="edu-item edu-accent-blue">
         <div class="edu-degree">Master of Information Science</div>
-        <div class="edu-institution">University of Ibadan — Dept. of Data & Information Science</div>
+        <div class="edu-institution">University of Ibadan — Dept. of Data and Information Science</div>
         <div class="edu-meta">
-          <span>📅 2024/2025</span>
+          <span>📅 2026</span>
           <span>🏛️ Faculty of Multidisciplinary Studies</span>
         </div>
-        <div class="grade-badge">★ Distinction — Predominantly A Grades</div>
-
-        <div class="transcript-toggle" onclick="toggleTranscript(this)">
-          <span>View Full Academic Transcript</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="transcript-content">
-          <table class="transcript-table">
-            <thead>
-              <tr><th>Code</th><th>Course</th><th>Score</th><th>Grade</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>FSC 736</td><td>Technical Report Writing & Presentation</td><td>88</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 751</td><td>Productivity Software Skill Development</td><td>82</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 799</td><td>Project</td><td>82</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>CSC 790</td><td>Foundations of Deep Learning</td><td>82</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 701</td><td>Introduction to Information Science & Theory</td><td>81</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 716</td><td>Principles of Information Retrieval</td><td>80</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 724</td><td>Database Management Systems I</td><td>80</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 731</td><td>Information Users, Sources & Systems</td><td>78</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 715</td><td>Organization of Data and Information Sources</td><td>75</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 792</td><td>Research Seminar</td><td>73</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 755</td><td>Information Technologies</td><td>71</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 723</td><td>Introduction to Programming</td><td>71</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 713</td><td>Quantitative Methods for Information Science</td><td>70</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 721</td><td>Information Systems Analysis, Design & Evaluation</td><td>70</td><td><span class="grade-a">A</span></td></tr>
-              <tr><td>FSC 741</td><td>Management of Information Resources & Centres</td><td>68</td><td><span class="grade-b">B</span></td></tr>
-              <tr><td>FSC 712</td><td>Research Methods in Information Science</td><td>64</td><td><span class="grade-b">B</span></td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="grade-badge">★ Distinction</div>
       </div>
 
       <div class="edu-item edu-accent-green">
-        <div class="edu-degree">Bachelor of Science — Physics</div>
+        <div class="edu-degree">Bachelor of Science in Physics</div>
         <div class="edu-institution">University of Abuja</div>
         <div class="edu-meta">
           <span>📅 2015</span>
@@ -1297,7 +1250,7 @@ footer {
     </div>
 
     <div class="edu-block">
-      <div class="edu-block-title">Certifications & Development</div>
+      <div class="edu-block-title">Certifications and Development</div>
 
       <div class="cert-item">
         <div class="cert-icon">📊</div>
@@ -1309,8 +1262,8 @@ footer {
       <div class="cert-item">
         <div class="cert-icon">🐍</div>
         <div>
-          <div class="cert-name">Python for Data Science & AI</div>
-          <div class="cert-org">IBM · Coursera</div>
+          <div class="cert-name">Python for Data Science and AI</div>
+          <div class="cert-org">Sara Academy · Udemy</div>
         </div>
       </div>
       <div class="cert-item">
@@ -1323,7 +1276,7 @@ footer {
       <div class="cert-item">
         <div class="cert-icon">📈</div>
         <div>
-          <div class="cert-name">Power BI Data Analyst</div>
+          <div class="cert-name">Power Platform Fundamentals</div>
           <div class="cert-org">Microsoft</div>
         </div>
       </div>
@@ -1338,7 +1291,7 @@ footer {
       <div style="margin-top:24px; padding:18px; background:var(--paper-card); border:1px solid var(--rule); border-radius:var(--radius);">
         <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:12px;">Currently Exploring</div>
         <div style="font-size:0.85rem; color:var(--ink-light); line-height:1.7;">
-          🎯 <strong style="color:var(--ink);">Fully funded PhD opportunities</strong> in Data Science, Information Systems, and Business Intelligence — UK, USA, Germany & Netherlands.
+          🎯 Fully funded PhD opportunities in Data Science, Information Systems, and Business Intelligence — UK, USA, and EU countries.
         </div>
       </div>
     </div>
@@ -1360,11 +1313,6 @@ footer {
 </footer>
 
 <script>
-function toggleTranscript(el) {
-  el.classList.toggle('open');
-  el.nextElementSibling.classList.toggle('open');
-}
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
